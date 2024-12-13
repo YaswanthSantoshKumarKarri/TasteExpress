@@ -1,0 +1,49 @@
+.NavBarOuterMainSection{
+    width: 92.6%;
+    height: 18vh;
+    padding: 35px 50px 0 50px;
+    background-color: black;
+}
+.NavBarInnerMainSection{
+    width: 98.5%;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+}
+
+.leftNavBarSection{
+    flex: 1;
+}
+.leftNavBarSection>svg{
+    margin-left: 17px;
+}
+.middleNavBarSection{
+    flex:2;
+    text-align: center;
+    color: white;
+}
+.middleNavBarSection > .LogoTitle{
+    margin-bottom: 40px;
+    color: #CC0000;
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-size: 25px;
+    font-style: normal;
+    cursor: pointer;
+}
+.middleNavBarSection > .NavBarList > ul{
+    display: flex;
+}
+.middleNavBarSection > .NavBarList > ul > li{
+    flex: 1;
+}
+.middleNavBarSection > .NavBarList > ul > li>.navLink:hover{
+color: #CC0000;
+}
+.rightNavBarSection{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 50px;
+}

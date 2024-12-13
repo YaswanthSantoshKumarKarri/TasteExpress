@@ -1,0 +1,19 @@
+package com.example.tasteExpress.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+
+public class Employee {
+
+	@Id
+	@Column(unique = true)
+	private String employeeId;
+	private String employeeName;
+	private String address;
+	private String password;
+	@Column(unique = true)
+	private Long phoneNumber;
+	@Column(unique = true)
+	private String emailId;
+	
+}

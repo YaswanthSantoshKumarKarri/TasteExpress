@@ -1,0 +1,6 @@
+package com.example.tasteExpress.entity;
+
+
+public class Client {
+
+}

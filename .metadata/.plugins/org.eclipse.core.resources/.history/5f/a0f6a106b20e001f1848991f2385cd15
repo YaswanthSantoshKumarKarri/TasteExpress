@@ -1,0 +1,7 @@
+package com.example.tasteexpressbackend.entity;
+
+
+@Entity
+public class Client {
+
+}

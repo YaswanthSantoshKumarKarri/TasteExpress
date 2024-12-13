@@ -1,0 +1,219 @@
+.HomeMainOuterSection{
+    width: 100%;
+    height: 100%;
+}
+.IntroHomeSection{
+    background-image: url("./../../Assets/HomePageImages/HomePic.png");
+    background-size: cover;
+    color: white;
+    text-align: center;
+    height: 180vh;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.IntroHomeSection > p{
+    
+    font-family: "Heebo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+.IntroHomeSection > h1{
+    padding: 55vh 0 2vh 0;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 80px;
+}
+.IntroBtns{
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+}
+.IntroBtns > button:nth-child(1){
+    border: 2px solid #CC0000;
+    background-color: #bd0000;
+}
+.IntroBtns > button:nth-child(1):hover{
+    background-color: transparent;
+    border: 2px solid white;
+}
+.basicDetailsCircleSection{
+    display: flex;
+    justify-content: center;
+}
+.basicDetailsSection > .basicDetailsCircleSection > .circleImage{
+    position: absolute;
+    top: 140vh;
+}
+
+.basicDetailsCardSection{
+    display: flex;
+    margin-top: 5vh;
+    height: 100vh;
+}
+.basicInfoCard{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardInnerSection{
+    border-radius: 15px;
+    padding: 30px 30px 10px 30px;
+    text-align: center;
+    width: 70%;
+    height: 65vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.basicDetailsCardSection> div:nth-child(2){
+    margin-top: 30vh;
+}
+.cardInnerSection > img{
+    border-radius: 50%;
+}
+.cardH1tag{
+    color: red;
+}
+
+/* -------------------menu list css-------------- */
+.basicViewMenuSection{
+    margin-top:15vh;
+    color: white;
+    background-image: url("https://miro.medium.com/v2/resize:fit:1400/0*Z63GgEWUs8xJItAN");
+    background-size: cover;
+    border-image: fill 0 linear-gradient(rgba(117, 117, 117, 0.2),#000);
+    height: 103vh;
+}
+.basicViewInnerSection{
+    padding: 50px;
+}
+.basicViewInnerSection > .h1basicViewInnerSection{
+    font-size: 100px;
+}
+.basicViewInnerSection > button{
+    margin-top: 20px;
+    padding: 20px 50px;
+}
+/* ----------------------------deals page-------------------- */
+.DealsOuterSection{
+    padding:0 50px;
+    margin-top: 10vh;
+}
+.headingAndViewBtn{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.headingAndViewBtn >.dealsH1Tag{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    font-style: normal;
+}
+.headingAndViewBtn >.dealsViewAllBtn{
+    text-align: right;
+    width: 75%;
+}
+.headingAndViewBtn >.dealsViewAllBtn > button{
+    border-color: #CC0000;
+    color: #CC0000;
+    height: 10vh;
+}
+.headingAndViewBtn >.dealsViewAllBtn > button:hover{
+    color: white;
+}
+.mainOffersSection{
+    height: 150vh;
+    width: 100%;
+}
+.mainOffersSection > .grandOffer{
+    width: 100%;
+    height: 40%;
+    border-radius: 45px;
+    display: flex;
+    background: linear-gradient(to right,white,#ff0000);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.grandOffer > h1{
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 100px;
+    height: 100px;
+    top:460vh;
+    left: 10vh;
+    padding: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.grandOffer >.rightGrandOffer{
+    padding: 50px;
+    width: 60.9%;
+    height: 100%;
+}
+.rightGrandOffer > h4{
+    font-family: "Anton", sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+    font-style: normal;
+}
+.rightGrandOffer > h1{
+    font-family: "Anton", sans-serif;
+    font-weight: 500;
+    font-size: 45px;
+    font-style: normal;
+}
+.rightGrandOffer > p{
+    font-weight: 500;
+}
+.miniSubOffers{
+    display: flex;
+}
+.miniOffer{
+    display: flex;
+    width: 50%;
+    height: fit-content;
+    margin-top: 50px;
+    background: linear-gradient(to right,white,#ff0000);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 25px;
+}
+.miniOffer:nth-child(2){
+    margin-left: 50px;
+}
+
+.miniOffer > .miniOfferH11{
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    width: 60px;
+    height: 60px;
+    top:530vh;
+    left: 10vh;
+    padding: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+.miniOfferH12{
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    width: 60px;
+    height: 60px;
+    top:530vh;
+    left: 110vh;
+    padding: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+.miniOffer > .rightGrandOffer{
+    padding: 20px;
+
+}

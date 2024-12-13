@@ -1,0 +1,22 @@
+package com.example.tasteExpress.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Client {
+
+	@Id
+	private String clientId;
+	private String clientName;
+	private String address;
+	private String password;
+	private Long phoneNumber;
+	private String emailId;
+}

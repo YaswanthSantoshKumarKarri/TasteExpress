@@ -1,0 +1,13 @@
+package com.example.tasteexpressbackend.entity;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@EntityScan
+@Data
+@AllArgsConstructor
+public class Client {
+
+}

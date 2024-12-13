@@ -1,0 +1,27 @@
+package com.example.tasteExpress.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Admin {
+
+	@Id
+	@Column(unique = true)
+	private String adminId;
+	private String adminName;
+	private String address;
+	private String password;
+	@Column(unique = true)
+	private Long phoneNumber;
+	@Column(unique = true)
+	private String emailId;
+	
+}

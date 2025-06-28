@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Menu.css'
 import FoodMenuCarousal from '../../Components/FoodMenuCarousal/FoodMenuCarousal'
+import MenuList from './MenuList/MenuList'
 const Menu = () => {
   return (
     <div className='MenuOuterMainSection'>
@@ -20,11 +22,11 @@ const Menu = () => {
           <div className="IntroContent">
             <h1 className='menuHeadingH1'>Fast, tasty & served well</h1><br/>
             <p className='menuParap'>100% Healthy and Natural foods</p><br/><br/>
-            <button>See Full Menu</button>
+            <button><Link className='navLink' to="MenuList">See Full Menu</Link></button>
           </div>
         </div>
         <div className="FoodItemsMenu">
-          <FoodMenuCarousal/>
+          <MenuList/>
         </div>
       </div>
     </div>

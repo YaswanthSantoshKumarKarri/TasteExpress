@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CircleImage from "../../../Assets/HomePageImages/vertical-shot-traditional-indian-paneer-butter-masala-cheese-cottage-curry-black-surface_181624-32001-removebg-preview.png"
+import CircleImage from "../../../Assets/HomePageImages/plate-food.png"
 
 
 const BasicDetailsSec = () => {
@@ -22,7 +22,7 @@ const BasicDetailsSec = () => {
   return (
     <div className="basicDetailsSection">
       <div className="basicDetailsCircleSection">
-        <img className='circleImage' width="40%" src={CircleImage} alt="" />
+        <img className='circleImage' width="45%" src={CircleImage} alt="" />
       </div>
       <div className="basicDetailsCardSection">
       {cardDetails.map((row, index) => (          

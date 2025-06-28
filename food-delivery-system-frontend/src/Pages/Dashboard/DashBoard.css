@@ -1,0 +1,38 @@
+.DashboardMainSection{
+    background-color: black;
+}
+.DashboardMainSection>h1{
+    color: #CC0000;
+    text-align: center;
+}
+.CardsOfCharts{
+    display: flex;
+}
+.ChartCard{
+    flex: 1;
+    margin: 0 40px;
+    border: 1px rgba(80, 69, 69, 0.19) solid;
+    background-color: rgba(99, 86, 86, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(145, 128, 128, 0.2), 0 6px 20px 0 rgba(107, 94, 94, 0.19);
+}
+.bestSellerSection{
+display: flex;
+}
+.pieCard{
+    flex: 1;
+    margin: 0 40px;
+    border: 1px rgba(80, 69, 69, 0.19) solid;
+    background-color: rgba(99, 86, 86, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(145, 128, 128, 0.2), 0 6px 20px 0 rgba(107, 94, 94, 0.19);
+}
+.topThreeSellers{
+    flex: 1;
+    margin: 0 40px;
+    border: 1px rgba(80, 69, 69, 0.19) solid;
+    background-color: rgba(99, 86, 86, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(145, 128, 128, 0.2), 0 6px 20px 0 rgba(107, 94, 94, 0.19);
+}
+.bestSellersMainSection>h2{
+    color: #fff;
+    text-align: center;
+}

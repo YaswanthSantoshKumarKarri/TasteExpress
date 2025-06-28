@@ -1,22 +1,21 @@
 import React,{useEffect,useState} from 'react'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
 
 import './FoodMenuCarousal.css'
-import CommonServices from '../../Services/CommonServices';
 
 const FoodMenuCarousal = () => {
   
   const [FetchedReviews, setFetchedReviews] = useState([]);
-  useEffect(() => {
-    setTimeout(() => {
-      CommonServices.getAllFoods().then(Response=>{
-        setFetchedReviews(Response.data)
-        console.log(Response.data)
-      })
-    }, 1000);
-  });
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     CommonServices.getAllFoods().then(Response=>{
+  //       setFetchedReviews(Response.data)
+  //       console.log(Response.data)
+  //     })
+  //   }, 1000);
+  // });
 
   const settings = {
     dots: true,
@@ -31,13 +30,13 @@ const FoodMenuCarousal = () => {
     <div className='MainCustomersCarousal'>
       <h1 className='MainMenuHeadingH1'>Our Menu</h1>
       <div className="InnerCustomersCarousal">
+      {/* 
       <Slider ref={slider} className='Slider' {...settings}>
       {FetchedReviews.map((row, index) => (
         <div key={index}>
         <div className='innersliderDiv'>
-          
+         
           <h3>{row.itemMakingTime}</h3>
-          {/* <h5><StarRating rating={row.rating}/>  </h5> */}
           <div className='image'><img width="200px" height='200px' src={row.itemImg}/></div>
           <div className="itemNameAndCost">
             <h3>{row.itemName}</h3>
@@ -63,6 +62,8 @@ const FoodMenuCarousal = () => {
         </div>
       ))}
     </Slider>
+
+    */}
     </div>
     </div>    
   );

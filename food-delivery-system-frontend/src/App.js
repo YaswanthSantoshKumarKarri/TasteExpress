@@ -7,6 +7,8 @@ import LogIn from './Pages/SignOprPages/LogIn/LogIn';
 import SignUp from './Pages/SignOprPages/SignUp/SignUp';
 import Menu from './Pages/Menu/Menu';
 import AboutUsPage from './Pages/AboutUsPage/AboutUsPage'
+import MenuList from './Pages/Menu/MenuList/MenuList';
+import DashBoard from './Pages/Dashboard/DashBoard';
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,8 @@ function App() {
         <Route path='/AboutUs' element={<AboutUsPage />}/>
         <Route path='/' element={<Home />}/>
         <Route path='/Menu' element={<Menu />}/>
+        <Route path='/Menu/MenuList' element={<MenuList/> }/>
+         <Route path='/Dash-board' element={<DashBoard/> }/>
       </Routes>
       <Footer/>
     </div>

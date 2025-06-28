@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import "./LogIn.css";
 import { NavLink, useNavigate } from 'react-router-dom';
-import ClientServices from '../../../Services/ClientServices';
 
 const LogIn = () => {
 
@@ -31,27 +30,27 @@ const LogIn = () => {
     }); 
     const handleSubmitBtn=(event)=>{
         event.preventDefault();
-            if(admin===false) {
-                ClientServices.getClientByIdAndPassword(LogInData).then(Response=>{
-                    setUserData(userData.id = Response.data.id);
-                    setUserData(userData.name=Response.data.name);
-                    setUserData(userData.address=Response.data.address);
-                    setUserData(userData.emailId=Response.data.emailId);
-                    setUserData(userData.phoneNumber=Response.data.phoneNumber);
-                    localStorage.setItem('userData', JSON.stringify(userData));
-                    navigate('/');
-                })
-            }else{
-                // (AdminServices).getAdminByIdAndPassword(LogInData).then(Response=>{
-                //     setUserData(userData.Id=Response.data.adminId);
-                //     setUserData(userData.name=Response.data.adminName);
-                //     setUserData(userData.address=Response.data.address);
-                //     setUserData(userData.emailId=Response.data.emailId);
-                //     setUserData(userData.phoneNumber=Response.data.contactNumber);
-                //     setUserData(userData.role="admin");
-                //     localStorage.setItem('userData', JSON.stringify(userData));
-                // })
-            }
+            // if(admin===false) {
+            //     ClientServices.getClientByIdAndPassword(LogInData).then(Response=>{
+            //         setUserData(userData.id = Response.data.id);
+            //         setUserData(userData.name=Response.data.name);
+            //         setUserData(userData.address=Response.data.address);
+            //         setUserData(userData.emailId=Response.data.emailId);
+            //         setUserData(userData.phoneNumber=Response.data.phoneNumber);
+            //         localStorage.setItem('userData', JSON.stringify(userData));
+            //         navigate('/');
+            //     })
+            // }else{
+            //     // (AdminServices).getAdminByIdAndPassword(LogInData).then(Response=>{
+            //     //     setUserData(userData.Id=Response.data.adminId);
+            //     //     setUserData(userData.name=Response.data.adminName);
+            //     //     setUserData(userData.address=Response.data.address);
+            //     //     setUserData(userData.emailId=Response.data.emailId);
+            //     //     setUserData(userData.phoneNumber=Response.data.contactNumber);
+            //     //     setUserData(userData.role="admin");
+            //     //     localStorage.setItem('userData', JSON.stringify(userData));
+            //     // })
+            // }
     }
 
   return (

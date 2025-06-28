@@ -1,0 +1,70 @@
+.MenuListSection{
+    background-color: black;
+}
+
+.FoodItemsCardSection{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.FoodItemsInfoCard{
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.FoodItemsCardInnerSection{
+    border-radius: 15px;
+    padding: 30px 30px 10px 30px;
+    text-align: center;
+    width: 50%;
+    height: 55vh;
+    
+}
+
+.FoodItemName{
+    font-family: "Dancing Script", cursive;
+    width: 220px;
+}
+
+.RatingCal{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.RatingCal>p{
+    margin: 0 40px;
+}
+
+/*-----------------------------------pagination css-------------*/
+
+.paginationControls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paginationControls>p{
+    color: white;
+    margin: 0 10px;
+}
+
+
+/*-----------------------------------filteration css-------------*/
+.ItemsFilteration>ul{
+    display: flex;
+}
+.ItemsFilteration>ul>li{
+    flex: .5;
+    margin: 0 20px;
+    color: #CC0000;
+}
+.ItemsFilteration>ul>li:hover{
+    color: white;
+}

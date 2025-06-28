@@ -1,7 +1,6 @@
 import React ,{useEffect, useState}from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
 import "./SignUp.css"
-import ClientServices from '../../../Services/ClientServices'
 
 const SignUp = () => {
     const [ClientData,setClientData]=useState({
@@ -25,14 +24,14 @@ const SignUp = () => {
     const [fetchedClientData,setFetchedClientData]=useState();
     const handleSubmitBtn=(e)=>{
         e.preventDefault();
-        if(confirmPass===ClientData.password){
-            ClientServices.saveClient(ClientData).then(Response=>{
-                setFetchedClientData(Response.data);
-            })
+        // if(confirmPass===ClientData.password){
+        //     ClientServices.saveClient(ClientData).then(Response=>{
+        //         setFetchedClientData(Response.data);
+        //     })
             
-        }else{
-            alert("password and Confirm password mismatch")
-        }
+        // }else{
+        //     alert("password and Confirm password mismatch")
+        // }
     }
     useEffect(() => {
         if(fetchedClientData!==undefined){

@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Menu.css'
 import FoodMenuCarousal from '../../Components/FoodMenuCarousal/FoodMenuCarousal'
-import MenuList from './MenuList/MenuList'
+import axios from 'axios'
+import MenuItemDetails from '../../Data/MenuDataList/Menu';
+
 const Menu = () => {
+  const [FetchedMenu, setFetchedMenu] = useState([]);
+   
+  const baseURL = 'http://localhost:8080/API/FoodMenu/';
+
+  useEffect(() => {
+    fetchMenuItems();
+  }, []);
+
+  const fetchMenuItems = async () => {
+    try {
+      const response = await axios.get(`${baseURL}All`);
+      setFetchedMenu(response.data);  
+    } catch (error) {
+      console.error('Failed to fetch cart items', error);
+      setFetchedMenu(MenuItemDetails)
+    }
+  };
   return (
     <div className='MenuOuterMainSection'>
       <div className="MenuInnerMainSection">
@@ -26,7 +45,7 @@ const Menu = () => {
           </div>
         </div>
         <div className="FoodItemsMenu">
-          <MenuList/>
+          <FoodMenuCarousal FetchedMenu={FetchedMenu}/>
         </div>
       </div>
     </div>

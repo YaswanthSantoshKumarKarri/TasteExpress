@@ -76,3 +76,8 @@ textarea:focus, input:focus{
   list-style: none;
   text-decoration: none;
 }
+
+select{
+  border-bottom: #CC0000 2px solid;
+  color: white;
+}

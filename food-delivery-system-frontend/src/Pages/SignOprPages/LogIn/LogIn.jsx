@@ -62,23 +62,23 @@ const LogIn = () => {
                     <form className='formOfLoginPage' action="">
                         {(admin===true) ? (
                         <>
-                            <input type="number" name='id' onChange={handleInputChange} style={{width:"250px"}} placeholder='ClientId' required/><br/>
+                            <input type="number" name='id' onChange={handleInputChange} style={{width:"250px"}} placeholder='UserId' required/><br/>
                         </>) : 
                          (<>
-                            <input type="text" name='id' onChange={handleInputChange} placeholder='ClientId' required/><br/>
+                            <input type="text" name='id' onChange={handleInputChange} placeholder='UserId' required/><br/>
                          </>) 
                         }
                         <input type="password" name='password' onChange={handleInputChange} placeholder='password' required/><br/>
-                        <button className='btnLogInPage' onClick={handleSubmitBtn}>Submit</button>
+                        <button className='btnLogInPage' onClick={handleSubmitBtn}><NavLink className="navLink" to="/">Submit</NavLink></button>
                     </form>
-                    <p>Don't have an Account <NavLink className="navBar" style={{color:"#580097"}} to="/signUp">click Here</NavLink></p>
-                    <p style={{display:"flex",justifyContent:"center"}}>SignIn as<pre> </pre> <div onClick={handleAdminEntry} style={{cursor:"pointer", color:"#580097"}}> Admin</div></p>
+                    {/* <p>Don't have an Account <NavLink className="navBar" style={{color:"#580097"}} to="/signUp">click Here</NavLink></p>
+                    <p style={{display:"flex",justifyContent:"center"}}>SignIn as<pre> </pre> <div onClick={handleAdminEntry} style={{cursor:"pointer", color:"#580097"}}> Admin</div></p> */}
                 </div>
             </div>
             <div className="rightOuterLogInMainInnerSection">
                 <div className="rightInnerLogInMainInnerSection">
-                    <h1 className='h1TagleftInnerLogInMainInnerSection'>Welcome to <br/><span>ABC-Electronics</span></h1>
-                    <p> Bridging complaints to solutions in the realm of electronics.</p>
+                    <h1 className='h1TagleftInnerLogInMainInnerSection'>Welcome to <br/><span>Taste-Express</span></h1>
+                    <p> Bridging Taste to your Hearts.</p>
                 </div>
             </div>
         </div>

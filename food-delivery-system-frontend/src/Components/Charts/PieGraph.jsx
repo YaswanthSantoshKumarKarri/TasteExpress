@@ -9,7 +9,7 @@ const PieGraph = () => {
     labels: [ "Appetizer", "Salad", "Main Course", "Italian", "Dessert", "Beverage", "Cocktail"],
     datasets: [
       {
-        label: "Time Spent",
+        label: "Best Sales",
         data: [290, 6, 20, 10, 15, 17 , 280],
         backgroundColor: [
           "#CC0000",

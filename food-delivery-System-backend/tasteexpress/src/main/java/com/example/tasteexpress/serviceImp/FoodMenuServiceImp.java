@@ -24,7 +24,10 @@ public class FoodMenuServiceImp implements FoodMenuService {
 	}
 	@Override
 	public List<FoodMenu> getAllItems() {
-		return foodMenuRepo.findAll();
+		List<FoodMenu> all = foodMenuRepo.findAll();
+	    System.out.println("Fetched items: " + all.size());
+	    all.forEach(System.out::println);
+	    return all;
 	}
 	
 

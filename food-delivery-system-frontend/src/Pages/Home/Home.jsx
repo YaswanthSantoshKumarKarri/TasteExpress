@@ -5,7 +5,7 @@ import BasicDetailsSec from '../../Components/HomePageComponents/BasicDetailsSec
 import { NavLink } from 'react-router-dom';
 const Home = () => {
   //check if logged In
-  const [loggedIn,setLoggedIn]=useState(false);
+  const [loggedIn,setLoggedIn]=useState(true);
   const storedToken = localStorage.getItem('userData');
   // const parsedTokenData = JSON.parse(storedToken);
   // setTokenData(parsedTokenData);
@@ -44,11 +44,9 @@ const Home = () => {
               <button><NavLink className="navLink" to="/Menu">VIEW MENU</NavLink></button>          
             </div>
           </div>
-          <BestDeals/>
         </div>
       </div>
     </>
   )
 }
-
 export default Home

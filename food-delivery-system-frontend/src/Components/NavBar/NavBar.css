@@ -1,28 +1,37 @@
-.NavBarOuterMainSection{
-    width: 92.6%;
+.NavBarOuterMainSection {
+    width: auto;
     height: 18vh;
     padding: 35px 50px 0 50px;
     background-color: black;
 }
-.NavBarInnerMainSection{
+
+.NavBarInnerMainSection {
     width: 98.5%;
     height: 100%;
     padding: 0 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.leftNavBarSection{
+.leftNavBarSection {
     flex: 1;
+    display: flex;
+    justify-content: flex-start;
 }
-.leftNavBarSection>svg{
+
+.leftNavBarSection>svg {
     margin-left: 17px;
+    cursor: pointer;
 }
-.middleNavBarSection{
-    flex:2;
+
+.middleNavBarSection {
+    flex: 2;
     text-align: center;
     color: white;
 }
-.middleNavBarSection > .LogoTitle{
+
+.middleNavBarSection > .LogoTitle {
     margin-bottom: 40px;
     color: #CC0000;
     font-family: "Satisfy", cursive;
@@ -31,19 +40,152 @@
     font-style: normal;
     cursor: pointer;
 }
-.middleNavBarSection > .NavBarList > ul{
+
+.middleNavBarSection > .NavBarList > ul {
     display: flex;
+    justify-content: center;
+    padding: 0;
 }
-.middleNavBarSection > .NavBarList > ul > li{
+
+.middleNavBarSection > .NavBarList > ul > li {
     flex: 1;
 }
-.middleNavBarSection > .NavBarList > ul > li>.navLink:hover{
-color: #CC0000;
+
+.middleNavBarSection > .NavBarList > ul > li>.navLink:hover {
+    color: #CC0000;
 }
-.rightNavBarSection{
+
+.rightNavBarSection {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     max-height: 50px;
+}
+
+.rightNavBarSection button {
+    background-color: transparent;
+    border: 2px solid #CC0000;
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.rightNavBarSection button:hover {
+    background-color: #CC0000;
+    color: black;
+}
+
+/* Responsive Styles */
+
+/* For screens <= 1024px */
+@media (max-width: 1024px) {
+    .NavBarInnerMainSection {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .middleNavBarSection > .NavBarList > ul {
+        display: flex;
+    }
+
+    .middleNavBarSection > .NavBarList > ul > li {
+        flex: 1;
+    }
+
+    .leftNavBarSection, .rightNavBarSection {
+        display: none; /* Hide the left and right sections on medium screens */
+    }
+}
+
+/* For screens <= 768px */
+@media (max-width: 768px) {
+    .NavBarInnerMainSection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leftNavBarSection, .rightNavBarSection {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .middleNavBarSection > .LogoTitle {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .middleNavBarSection > .NavBarList > ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .middleNavBarSection > .NavBarList > ul > li {
+        margin-bottom: 10px;
+    }
+
+    .rightNavBarSection button {
+        width: 100%;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+}
+
+/* For screens <= 600px */
+@media (max-width: 600px) {
+    .NavBarOuterMainSection {
+        height: auto; /* Allow more height for small screens */
+        padding: 20px 30px;
+    }
+
+    .leftNavBarSection, .rightNavBarSection {
+        display: none; /* Hide left and right icons for smaller screens */
+    }
+
+    .middleNavBarSection > .LogoTitle {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .middleNavBarSection > .NavBarList > ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 0;
+    }
+
+    .middleNavBarSection > .NavBarList > ul > li {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .rightNavBarSection button {
+        width: 100%;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+}
+
+/* For screens <= 400px */
+@media (max-width: 400px) {
+    .NavBarOuterMainSection {
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .middleNavBarSection > .LogoTitle {
+        font-size: 16px;
+    }
+
+    .middleNavBarSection > .NavBarList > ul > li {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .rightNavBarSection button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
 }

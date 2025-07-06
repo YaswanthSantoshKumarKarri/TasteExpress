@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {NavLink} from 'react-router-dom'
 import "./NavBar.css"
+import { useSelector } from 'react-redux'
 const NavBar = () => {
+    const [totalQuantity,setTotalQuantity]=useState(0)
+    const carts=useSelector(store=>store.cart.items);
+    useEffect(()=>{
+      let total=0;
+      carts.forEach(item => total += item.quantity); 
+      setTotalQuantity(total)
+    },[carts])
   return (
     <>
       <div className="NavBarOuterMainSection">
@@ -24,7 +32,7 @@ const NavBar = () => {
                 <li><NavLink className="navLink" to="/">HOME</NavLink></li>
                 <li><NavLink className="navLink" to="/Menu">OUR MENU</NavLink></li>
                 <li><NavLink className="navLink" to="/AboutUs">ABOUT</NavLink></li>
-                {/* <li><NavLink className="navLink" to="/">OFFERS</NavLink></li> */}
+                <li><NavLink className="navLink" to="/Cart">CART {totalQuantity==0 ? "": totalQuantity}</NavLink></li>
                 <li><NavLink className="navLink" to="/Dash-board">DASHBOARD</NavLink></li>
               </ul>
             </div>

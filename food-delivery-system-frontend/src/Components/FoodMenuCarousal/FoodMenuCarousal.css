@@ -1,20 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Whisper&display=swap');
-.MainCustomersCarousal{
+
+.MainCustomersCarousal {
     margin: 70px 0 10px 0;
     padding: 20px;
     text-align: center;
     height: 120vh;
-}
-.MainCustomersCarousal > h1{
-    color: white;
-    font-family: "Whisper", cursive;
-  font-weight: 700;
-  font-style:normal;
-  font-size: 50px;
+    position: relative; /* Ensure scrolling text is on top */
 }
 
-.InnerCustomersCarousal{
+/* Scrolling Text Container */
+.scrolling-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background-color: black; /* Background color for scrolling text */
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+.scrolling-text {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    color: white;
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%; /* Initially start from the right */
+    animation: scrollLeft 10s linear infinite;
+}
+
+/* Keyframes for scrolling text */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(220px); /* Start from right edge */
+    }
+    100% {
+        transform: translateX(100px); /* End at left edge */
+    }
+}
+
+/* Main Heading */
+.MainCustomersCarousal > h1 {
+    color: white;
+    font-family: "Whisper", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+    z-index: 2;
+}
+
+/* Carousel */
+.InnerCustomersCarousal {
     height: 85%;
     margin: 30px 0 60px 0;
     padding: 0;
@@ -22,70 +60,258 @@
     align-items: center;
     justify-content: center;
 }
-  .Slider{
+
+.Slider {
     width: 90%;
     height: 100%;
-  }
-  .Slider > div{
+}
+
+.Slider > div {
     width: 100%;
     height: 100%;
-    /* text-align: center; */
-  }
-  .innersliderDiv{
+}
+
+/* Individual Card Styles */
+.innersliderDiv {
+    background-color: transparent;
     width: 20vw;
-    height: 60vh;
     padding: 20px;
     border-radius: 15px;
     margin: 40px;
-    background-color: transparent;
     color: white;
-  }
-.innersliderDiv > .image{
+}
+
+.innersliderDiv > .image {
     display: flex;
-    justify-content: center; 
-  }
-  .innersliderDiv > .image > img{
+    justify-content: center;
+}
+
+.innersliderDiv > .image > img {
     border-radius: 50%;
-  }
-  .itemNameAndCost{
+}
+
+.itemNameAndCost {
     display: flex;
     color: rgb(151, 0, 0);
     margin: 20px 0;
-  }
-  .itemNameAndCost > h3{
-    flex: 1;
-  }
-  .itemNameAndCost > h3:nth-child(2){
-    margin-left: 80px;
-  }
-  /* .innersliderDiv > p{
-    background-color: red;
-  } */
-.quantityAndTime{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-.quantityAndTime >h4{
-  flex: 1;
-}
-.quantityAndTime >h4> svg{
-  color: rgb(207, 1, 1);
-  padding :2px 0 0 0 ;
 }
 
-  .slick-prev:before,
-  .slick-next:before {
+.itemNameAndCost > h3:nth-child(2) {
+    margin-left: 80px;
+}
+
+.quantityAndTime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.quantityAndTime > h4 {
+    flex: 1;
+}
+
+.quantityAndTime > h4 > svg {
+    color: rgb(207, 1, 1);
+    padding: 2px 0 0 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
     color: rgb(128, 1, 1) !important;
-  }
-  .slick-prev:hover,
-  .slick-next:hover {
+}
+
+.slick-prev:hover,
+.slick-next:hover {
     border: none;
-  }
-  .slick-dots li button:before {
-    color:white;
-  }
-  .slick-dots li.slick-active button:before {
-    color:skyblue !important;
-  }
+}
+
+.slick-dots li button:before {
+    color: white;
+}
+
+.slick-dots li.slick-active button:before {
+    color: skyblue !important;
+}
+
+/* ---------------------------- Responsive Media Queries --------------------------- */
+
+/* For screens <= 768px (Tablet Portrait / Landscape) */
+@media (max-width: 768px) {
+    .MainCustomersCarousal > h1 {
+        font-size: 40px; /* Smaller heading size for tablets */
+    }
+
+    .innersliderDiv {
+        width: 40vw;
+        height: 50vh;
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .itemNameAndCost > h3:nth-child(2) {
+        margin-left: 50px;
+    }
+
+    .quantityAndTime > h4 {
+        font-size: 14px;
+    }
+
+    .quantityAndTime > h4 > svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 20px;
+    }
+
+    .Slider {
+        width: 80%;
+    }
+}
+
+/* For screens <= 600px (Mobile Landscape) */
+@media (max-width: 600px) {
+    .MainCustomersCarousal > h1 {
+        font-size: 35px; /* Smaller heading size for mobile landscape */
+    }
+
+    .innersliderDiv {
+        width: 60vw;
+        height: 45vh;
+        padding: 12px;
+        margin: 10px;
+    }
+
+    .itemNameAndCost > h3:nth-child(2) {
+        margin-left: 30px;
+    }
+
+    .quantityAndTime > h4 {
+        font-size: 12px;
+    }
+
+    .quantityAndTime > h4 > svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 18px;
+    }
+
+    .Slider {
+        width: 100%;
+    }
+}
+
+/* For screens <= 400px (Mobile Portrait) */
+@media (max-width: 400px) {
+    .MainCustomersCarousal > h1 {
+        font-size: 30px; /* Smaller heading size for mobile portrait */
+    }
+
+    .innersliderDiv {
+        width: 80vw;
+        height: 40vh;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .itemNameAndCost > h3:nth-child(2) {
+        margin-left: 20px;
+    }
+
+    .quantityAndTime > h4 {
+        font-size: 10px;
+    }
+
+    .quantityAndTime > h4 > svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 16px;
+    }
+
+    .Slider {
+        width: 100%;
+    }
+}
+
+/* For screens <= 300px */
+@media (max-width: 300px) {
+    .MainCustomersCarousal > h1 {
+        font-size: 25px; /* Very small heading size for small mobile screens */
+    }
+
+    .innersliderDiv {
+        width: 90vw;
+        height: 35vh;
+        padding: 8px;
+        margin: 2px;
+    }
+
+    .itemNameAndCost > h3:nth-child(2) {
+        margin-left: 10px;
+    }
+
+    .quantityAndTime > h4 {
+        font-size: 8px;
+    }
+
+    .quantityAndTime > h4 > svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 14px;
+    }
+
+    .Slider {
+        width: 100%;
+    }
+}
+
+/* For screens <= 250px */
+@media (max-width: 250px) {
+    .MainCustomersCarousal > h1 {
+        font-size: 20px; /* Very small heading size for very small screens */
+    }
+
+    .innersliderDiv {
+        width: 90vw;
+        height: 30vh;
+        padding: 5px;
+        margin: 2px;
+    }
+
+    .itemNameAndCost > h3:nth-child(2) {
+        margin-left: 5px;
+    }
+
+    .quantityAndTime > h4 {
+        font-size: 6px;
+    }
+
+    .quantityAndTime > h4 > svg {
+        width: 8px;
+        height: 8px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 12px;
+    }
+
+    .Slider {
+        width: 100%;
+    }
+}

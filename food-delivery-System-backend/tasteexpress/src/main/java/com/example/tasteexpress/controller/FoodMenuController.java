@@ -14,14 +14,14 @@ import com.example.tasteexpress.entity.FoodMenu;
 import com.example.tasteexpress.service.FoodMenuService;
 
 @RestController
-@RequestMapping("/API/FoodMenu/")
+@RequestMapping("/API/FoodMenu/") //miss
 @CrossOrigin("http://localhost:3030")
 public class FoodMenuController {
 
 	@Autowired
 	private FoodMenuService foodMenuServic;
 	
-	@PostMapping("create")
+	@PostMapping("create")  //miss
 	public String createItem(@RequestBody FoodMenu foodMenuData){
 		return foodMenuServic.createItem(foodMenuData);
 	}

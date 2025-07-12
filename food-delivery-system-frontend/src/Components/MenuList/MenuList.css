@@ -1,48 +1,47 @@
-.MenuListSection{
-    background-color: black;
+.MenuListSection {
+  background-color: black;
 }
-.MenuListSection > h1{
-    color: white;
-    font-family: "Whisper", cursive;
-    font-weight: 700;
-    font-style:normal;
-    font-size: 50px;
-    text-align: center;
+
+.MainMenuHeadingH1 {
+  color: white;
+  font-family: "Whisper", cursive;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
 }
+
 .FoodItemsCardSection {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .FoodItemsInfoCard {
   background-color: #fff;
   border: 1px solid #ddd;
-  width: 250px;
   border-radius: 8px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 2px 4px 0 rgba(138, 132, 132, 0.2),0 6px 20px 0 rgba(170, 164, 164, 0.3);
+  box-shadow: 0 2px 4px rgba(138, 132, 132, 0.2), 0 6px 20px rgba(170, 164, 164, 0.3);
 }
 
 .FoodItemsCardInnerSection {
   border-radius: 15px;
   text-align: center;
   width: 100%;
-  height: auto;
+}
+
+.FoodItemImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .FoodItemName {
   font-family: "Dancing Script", cursive;
   width: 100%;
   word-wrap: break-word;
-}
-
-.FoodItemImg {
-  width: 250px;
-  max-height: 200px;
-  object-fit: cover;
 }
 
 .RatingCal {
@@ -60,61 +59,37 @@
   cursor: pointer;
 }
 
-.FoodItemName{
-    font-family: "Dancing Script", cursive;
-    width: 220px;
-}
-
-.RatingCal{
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.RatingCal>p{
-    margin: 0 40px;
-}
-
-/*-----------------------------------pagination css-------------*/
-
-.paginationControls{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.paginationControls>p{
-    color: white;
-    margin: 0 10px;
-}
-
-
-/*-----------------------------------filteration css-------------*/
-.ItemsFilteration{
+.paginationControls {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationControls > p {
+  color: white;
+  margin: 0 10px;
+}
+
+.ItemsFilteration {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
   gap: 20px;
 }
-/*-----------------------------------select css ------------------*/
-.ItemsFilteration>section{
-  flex: 5;
-  height: 200px;
-  
+
+.categoryFilter select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 6px;
+  min-width: 180px;
 }
-.ItemsFilteration>section>option{
-    flex: .5;
-    margin: 0 20px;
-    color: #CC0000;
-}
-.ItemsFilteration>ul>li:hover{
-    color: white;
-}
-/*----------------------------------------------------search bar ----------------------*/
 
 .searchBar {
-  float: right;
-  width: 100%;
+  flex: 1;
   max-width: 500px;
+  width: 100%;
 }
 
 .tagInputWrapper {
@@ -125,12 +100,12 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   min-height: 40px;
-  cursor: text;
+  background-color: rgb(255, 255, 255);
   gap: 5px;
 }
 
 .SearchTag {
-  background-color: #e0e0e0;
+  background-color: #9c9b9b;
   padding: 4px 8px;
   border-radius: 12px;
   display: flex;
@@ -152,14 +127,22 @@
   outline: none;
   min-width: 120px;
   font-size: 14px;
-  color: white;
+  color: black;
 }
 
+/* Responsive Layouts */
+@media (max-width: 768px) {
+  .ItemsFilteration {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-/*---------------------------------------------orderNowBTN-------------*/
-.OrderNowBtn{
-    color: grey;
-    border: 2px solid grey;
-    width: 200px;
+  .searchBar {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .categoryFilter select {
+    width: 100%;
+  }
 }
-

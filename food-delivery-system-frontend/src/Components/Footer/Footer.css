@@ -5,149 +5,104 @@
     cursor: default;
 }
 
-/* Upper Content (Logo and Quote) */
+/* Upper Content Layout */
 .upperContent {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* Centering Logo and Quote */
+/* Center Alignment */
 .CenterContent {
     display: block;
     text-align: center;
 }
 
-/* Logo and Quote */
-.upperContent > .logoWithQuote > .CenterContent > .Footerlogo {
+/* Logo */
+.Footerlogo {
     font-family: 'Brush Script MT', cursive;
-    font-size: 7vh; /* Responsive size */
+    font-size: 7vh;
     font-weight: 500;
 }
 
-.upperContent > .logoWithQuote > .CenterContent > .FooterQuote {
+.FooterQuote {
     font-family: 'Courier New', monospace;
     color: grey;
 }
 
-/* Footer List */
+/* Footer Lists */
 .FooterList {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for larger screens */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 }
 
-/* One and Two Sections */
-.FooterList > .CenterContent > .oneTwo {
+.FooterList .oneTwo,
+.FooterList .threeFour {
     padding: 10px 0;
     color: grey;
 }
 
-.FooterList > .CenterContent > .oneTwo > ul > li {
+.FooterList ul li {
     margin: 8px;
     font-family: 'Courier New', monospace;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.FooterList > .CenterContent > .oneTwo > ul > li:hover {
+.FooterList ul li:hover {
     color: #CC0000;
 }
 
-.FooterList > .CenterContent > .oneTwo > ul > li:nth-child(1) {
+.FooterList ul li:first-child {
     color: #fff;
     cursor: default;
 }
 
-/* Underline for OneTwo Section */
-.underLine {
-    display: block;
-    position: relative;
-    background-color: #CC0000;
-    width: 70px;
-    height: 1px;
-    margin: 6px 0 0 7.4vw;
-}
-
-/* Three and Four Sections */
-.FooterList > .CenterContent > .threeFour {
-    color: grey;
-    padding: 10px 0;
-}
-
-.FooterList > .CenterContent > .threeFour > ul > li {
-    margin: 8px;
-    font-family: 'Courier New', monospace;
-    cursor: pointer;
-}
-
-.FooterList > .CenterContent > .threeFour > ul > li:hover {
-    color: #CC0000;
-}
-
-.FooterList > .CenterContent > .threeFour > ul > li:nth-child(1) {
-    color: #fff;
-    cursor: default;
-}
-
-/* Underline for ThreeFour Section */
+/* Underlines */
+.underLine,
 .underLine1 {
     background-color: red;
-    width: 80px;
+    width: 70px;
     height: 1px;
-    margin: 6px 0 0 7.2vw;
+    margin: 6px auto;
 }
 
-/* Get In Touch Section */
-.GetInTouch {
-}
-
-.GetInTouch > .CenterContent {
-    height: 100%;
-}
-
-.GetInTouch > .CenterContent > .heading {
+/* Get In Touch */
+.GetInTouch .heading {
     margin-top: 2vh;
     font-family: 'Courier New', monospace;
+    font-size: 18px;
 }
 
-/* Underline2 for Get In Touch */
-.underLine2 {
-    display: block;
-    position: sticky;
-    background-color: red;
-    width: 80px;
-    height: 1px;
-    margin: 6px 0 0 7.2vw;
-}
-
-.GetInTouch > .CenterContent > div:nth-child(2) {
-    margin-top: 1vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Social Media Links */
-.GetInTouch > .CenterContent > .socialMedialLinks > ul {
+.socialMedialLinks ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
-    margin: 0;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    justify-content: center;
+    padding: 0;
+    margin-top: 10px;
     width: 100px;
+    margin-inline: auto;
 }
 
-.GetInTouch > .CenterContent > .socialMedialLinks > ul > li {
-    margin: 0 3px;
-    width: 20px;
-    height: 20px;
+.socialMedialLinks ul li {
+    width: 24px;
+    height: 24px;
     background-color: grey;
-    padding: 5px;
+    padding: 6px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.GetInTouch > .CenterContent > .socialMedialLinks > ul > li:hover {
+.socialMedialLinks ul li:hover {
     background-color: #CC0000;
+}
+
+.socialMedialLinks svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
 }
 
 /* Lower Content */
@@ -156,187 +111,199 @@
     padding: 10px;
 }
 
-/* Seperator line */
-.lowerContent > .CenterContent > .seperator {
+.lowerContent .seperator {
     background-color: #fff;
-    height: 0.1px;
-    width: 80vw;
-    margin: 0 0 1vh 10vw;
+    height: 1px;
+    width: 80%;
+    margin: 0 auto 1vh auto;
 }
 
-.lowerContent > .CenterContent > .copyrights {
+.lowerContent .copyrights {
     color: grey;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
-/* ---------------------------- Responsive Media Queries --------------------------- */
+.lowerContent .copyrights svg {
+    width: 15px;
+    height: 15px;
+    background-color: grey;
+    border-radius: 50%;
+    padding: 2px;
+}
 
-/* For screens <= 768px (Tablet Portrait / Landscape) */
-@media (max-width: 768px) {
+/* ========================= Media Queries ========================= */
+
+/* ≤ 700px */
+@media (max-width: 700px) {
     .upperContent {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        grid-template-columns: 1fr 1fr;
     }
 
     .FooterList {
-        grid-template-columns: 1fr; /* 1 column for tablet screens */
+        grid-template-columns: 1fr;
     }
 
-    .GetInTouch > .CenterContent > .socialMedialLinks > ul {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for social links */
+    .Footerlogo {
+        font-size: 5.5vh;
     }
 
-    .upperContent > .logoWithQuote > .CenterContent > .Footerlogo {
-        font-size: 5vh; /* Smaller font size for logo */
-    }
-
-    .FooterList > .CenterContent > .oneTwo > ul > li {
+    .FooterList ul li {
         font-size: 14px;
     }
 
-    .FooterList > .CenterContent > .threeFour > ul > li {
-        font-size: 14px;
+    .socialMedialLinks ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .GetInTouch .heading {
+        font-size: 16px;
     }
 }
 
-/* For screens <= 600px (Mobile Landscape) */
-@media (max-width: 600px) {
+/* ≤ 500px */
+@media (max-width: 500px) {
     .upperContent {
-        grid-template-columns: 1fr; /* 1 column for mobile */
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
     .FooterList {
-        grid-template-columns: 1fr; /* 1 column for mobile screens */
+        grid-template-columns: 1fr;
     }
 
-    .GetInTouch > .CenterContent > .socialMedialLinks > ul {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for social links */
+    .Footerlogo {
+        font-size: 4.5vh;
     }
 
-    .upperContent > .logoWithQuote > .CenterContent > .Footerlogo {
-        font-size: 4vh; /* Smaller font size for logo */
+    .FooterQuote {
+        font-size: 14px;
     }
 
-    .FooterList > .CenterContent > .oneTwo > ul > li {
+    .FooterList ul li {
         font-size: 13px;
     }
 
-    .FooterList > .CenterContent > .threeFour > ul > li {
-        font-size: 13px;
+    .underLine,
+    .underLine1 {
+        width: 60px;
     }
 
-    .lowerContent > .CenterContent > .seperator {
-        width: 100%;
-        margin-left: 0;
+    .socialMedialLinks ul {
+        grid-template-columns: repeat(2, 1fr);
+        width: 70px;
     }
 
-    .lowerContent > .CenterContent > .copyrights {
+    .socialMedialLinks ul li {
+        width: 20px;
+        height: 20px;
+        padding: 4px;
+    }
+
+    .GetInTouch .heading {
+        font-size: 15px;
+    }
+
+    .copyrights {
         font-size: 12px;
     }
+
+    .copyrights svg {
+        width: 12px;
+        height: 12px;
+    }
 }
 
-/* For screens <= 400px (Mobile Portrait) */
-@media (max-width: 400px) {
-    .upperContent {
-        grid-template-columns: 1fr; /* Stack everything in 1 column */
-    }
-
-    .FooterList {
-        grid-template-columns: 1fr; /* 1 column for small mobile screens */
-    }
-
-    .GetInTouch > .CenterContent > .socialMedialLinks > ul {
-        grid-template-columns: 1fr; /* 1 column for small mobile screens */
-    }
-
-    .upperContent > .logoWithQuote > .CenterContent > .Footerlogo {
+/* ≤ 300px */
+@media (max-width: 300px) {
+    .Footerlogo {
         font-size: 3.5vh;
     }
 
-    .FooterList > .CenterContent > .oneTwo > ul > li {
-        font-size: 11px;
+    .FooterQuote {
+        font-size: 13px;
     }
 
-    .FooterList > .CenterContent > .threeFour > ul > li {
-        font-size: 11px;
+    .FooterList ul li {
+        font-size: 12px;
     }
 
-    .lowerContent > .CenterContent > .seperator {
-        width: 100%;
-        margin-left: 0;
+    .underLine,
+    .underLine1 {
+        width: 50px;
     }
 
-    .lowerContent > .CenterContent > .copyrights {
+    .socialMedialLinks ul {
+        grid-template-columns: repeat(2, 1fr);
+        width: 60px;
+    }
+
+    .socialMedialLinks ul li {
+        width: 18px;
+        height: 18px;
+        padding: 3px;
+    }
+
+    .GetInTouch .heading {
+        font-size: 14px;
+    }
+
+    .copyrights {
         font-size: 10px;
+    }
+
+    .copyrights svg {
+        width: 10px;
+        height: 10px;
     }
 }
 
-/* For screens <= 300px */
-@media (max-width: 300px) {
-    .upperContent {
-        grid-template-columns: 1fr; /* Stack everything in 1 column */
-    }
-
-    .FooterList {
-        grid-template-columns: 1fr; /* 1 column for very small mobile screens */
-    }
-
-    .GetInTouch > .CenterContent > .socialMedialLinks > ul {
-        grid-template-columns: 1fr; /* 1 column for very small mobile screens */
-    }
-
-    .upperContent > .logoWithQuote > .CenterContent > .Footerlogo {
+/* ≤ 250px */
+@media (max-width: 250px) {
+    .Footerlogo {
         font-size: 3vh;
     }
 
-    .FooterList > .CenterContent > .oneTwo > ul > li {
-        font-size: 10px;
+    .FooterQuote {
+        font-size: 12px;
     }
 
-    .FooterList > .CenterContent > .threeFour > ul > li {
-        font-size: 10px;
+    .FooterList ul li {
+        font-size: 11px;
     }
 
-    .lowerContent > .CenterContent > .seperator {
-        width: 100%;
-        margin-left: 0;
+    .underLine,
+    .underLine1 {
+        width: 40px;
     }
 
-    .lowerContent > .CenterContent > .copyrights {
-        font-size: 8px;
-    }
-}
-
-/* For screens <= 250px */
-@media (max-width: 250px) {
-    .upperContent {
-        grid-template-columns: 1fr; /* Stack everything in 1 column */
+    .socialMedialLinks ul {
+        grid-template-columns: 1fr;
+        width: 50px;
     }
 
-    .FooterList {
-        grid-template-columns: 1fr; /* 1 column for very small mobile screens */
+    .socialMedialLinks ul li {
+        width: 16px;
+        height: 16px;
+        padding: 2px;
     }
 
-    .GetInTouch > .CenterContent > .socialMedialLinks > ul {
-        grid-template-columns: 1fr; /* 1 column for very small mobile screens */
+    .GetInTouch .heading {
+        font-size: 13px;
     }
 
-    .upperContent > .logoWithQuote > .CenterContent > .Footerlogo {
-        font-size: 2.5vh;
-    }
-
-    .FooterList > .CenterContent > .oneTwo > ul > li {
+    .copyrights {
         font-size: 9px;
+        flex-direction: column;
     }
 
-    .FooterList > .CenterContent > .threeFour > ul > li {
-        font-size: 9px;
-    }
-
-    .lowerContent > .CenterContent > .seperator {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .lowerContent > .CenterContent > .copyrights {
-        font-size: 7px;
+    .copyrights svg {
+        width: 8px;
+        height: 8px;
     }
 }

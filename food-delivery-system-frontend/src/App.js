@@ -9,6 +9,7 @@ import AboutUsPage from './Pages/AboutUsPage/AboutUsPage'
 import MenuList from './Components/MenuList/MenuList';
 import DashBoard from './Pages/Dashboard/DashBoard';
 import CartPage from './Pages/CartPage/CartPage';
+import PaymentSuccess from './Pages/PaymentSuccessPage/PaymentSuccess';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
         <Route path='/Menu/MenuList' element={<MenuList/> }/>
         <Route path='/Cart' element={<CartPage/> }/>
         <Route path='/Dash-board' element={<DashBoard/> }/>
+        <Route path='/PaymentSuccess' element={<PaymentSuccess/>  }/>
       </Routes>
       <Footer/>
     </div>

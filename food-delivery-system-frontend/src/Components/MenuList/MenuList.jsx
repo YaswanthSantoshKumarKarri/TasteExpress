@@ -9,7 +9,6 @@ const MenuList = () => {
   const [fetchedMenu, setFetchedMenu] = useState([]);
   const inputRef = useRef(null);
   const carts = useSelector((store) => store.cart.items);
-  console.log(carts);
 
   const [templateCart] = useState({
     foodMenu: {
@@ -29,7 +28,6 @@ const MenuList = () => {
   });
 
   const dispatch = useDispatch();
-
   const baseURL = 'http://localhost:8080/API/FoodMenu/';
   const cartBaseURL = 'http://localhost:8080/API/Cart/';
 
@@ -50,7 +48,7 @@ const MenuList = () => {
   const handleCreateCartItem = async (CartItem) => {
     const updatedCartItem = {
       ...templateCart,
-      foodMenu: { ...CartItem }, // Store the full food item object
+      foodMenu: { ...CartItem },
     };
 
     try {
@@ -58,7 +56,7 @@ const MenuList = () => {
     } catch (error) {
       dispatch(
         addToCart({
-          foodMenu: { ...CartItem }, // Pass the full food item to Redux
+          foodMenu: { ...CartItem },
           quantity: 1,
         })
       );
@@ -66,11 +64,9 @@ const MenuList = () => {
     }
   };
 
-  // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
-  // Filters
   const [filteredCategory, setFilteredCategory] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [selectedItems, setSelectedItems] = useState([]);
@@ -92,7 +88,6 @@ const MenuList = () => {
     setSelectedItems(selectedItems.filter((item) => item !== term));
   };
 
-  // Final filtering
   let filteredItems = [...fetchedMenu];
 
   if (filteredCategory) {
@@ -103,7 +98,6 @@ const MenuList = () => {
     );
   }
 
-  // Combine selectedItems + inputValue
   const allSearchTerms = [...selectedItems];
   if (inputValue.trim() && !allSearchTerms.includes(inputValue.trim())) {
     allSearchTerms.push(inputValue.trim());
@@ -117,7 +111,6 @@ const MenuList = () => {
     );
   }
 
-  // Pagination logic
   const lastPostIndex = currentPage * itemsPerPage;
   const firstPostIndex = lastPostIndex - itemsPerPage;
   const currentPosts = filteredItems.slice(firstPostIndex, lastPostIndex);
@@ -126,7 +119,6 @@ const MenuList = () => {
     <div className="MenuListSection">
       <h1 className="MainMenuHeadingH1">Our Menu</h1>
 
-      {/* Filter Section */}
       <div className="ItemsFilteration">
         <div className="categoryFilter">
           <select
@@ -146,10 +138,7 @@ const MenuList = () => {
         </div>
 
         <div className="searchBar">
-          <div
-            className="tagInputWrapper"
-            onClick={() => inputRef.current?.focus()}
-          >
+          <div className="tagInputWrapper" onClick={() => inputRef.current?.focus()}>
             {selectedItems.map((item) => (
               <span key={item} className="SearchTag">
                 {item}
@@ -175,7 +164,6 @@ const MenuList = () => {
         </div>
       </div>
 
-      {/* Food Cards */}
       <div className="FoodItemsCardSection">
         {currentPosts.length === 0 ? (
           <p>No items found.</p>
@@ -185,8 +173,6 @@ const MenuList = () => {
               <div className="FoodItemsCardInnerSection">
                 <img
                   className="FoodItemImg"
-                  width="220px"
-                  height="200px"
                   src={row.imgUrl}
                   alt={row.dishName}
                 />
@@ -195,10 +181,7 @@ const MenuList = () => {
                   <div className="Rating">Rating: {row.rating}</div>
                   <p>Cal: {row.cal}</p>
                 </div>
-                <button
-                  className="OrderNowBtn"
-                  onClick={() => handleCreateCartItem(row)}
-                >
+                <button className="OrderNowBtn" onClick={() => handleCreateCartItem(row)}>
                   Order Now
                 </button>
               </div>
@@ -207,7 +190,6 @@ const MenuList = () => {
         )}
       </div>
 
-      {/* Pagination */}
       <div className="paginationControls">
         {firstPostIndex !== 0 && (
           <svg
@@ -224,11 +206,7 @@ const MenuList = () => {
             strokeWidth="1.5"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
           </svg>
         )}
         <p>{currentPage}</p>
@@ -247,11 +225,7 @@ const MenuList = () => {
             strokeWidth="1.5"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m8.25 4.5 7.5 7.5-7.5 7.5"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
           </svg>
         )}
       </div>

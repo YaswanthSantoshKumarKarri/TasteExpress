@@ -1,5 +1,5 @@
-import React from 'react'
-import { Line } from 'react-chartjs-2'
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,8 +8,8 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend
-} from 'chart.js'
+  Legend,
+} from 'chart.js';
 
 ChartJS.register(
   CategoryScale,
@@ -19,19 +19,36 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend
-)
+);
 
-const LineGraph = ({ lineChartData,widthValue,heightValue }) => {
+const LineGraph = ({ lineChartData }) => {
   const options = {
     responsive: true,
-    maintainAspectRatio: false
-  }
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          color: 'white',
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: { color: 'white' },
+        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+      },
+      y: {
+        ticks: { color: 'white' },
+        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+      },
+    },
+  };
 
   return (
-    <div style={{ width: widthValue, height: heightValue }}>
+    <div className="LineChartDataMain">
       <Line options={options} data={lineChartData} />
     </div>
-  )
-}
+  );
+};
 
-export default LineGraph
+export default LineGraph;

@@ -267,6 +267,59 @@
 
 /* ========== Media Queries ========== */
 
+/*------screen below 900--------------*/
+@media (max-width: 900px) {
+  .IntroHomeSection {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vh 2vw;
+    border-bottom-left-radius: 30% 15%;
+    border-bottom-right-radius: 30% 15%;
+  }
+
+  .IntroHomeSection > h1 {
+    padding-top: 0;
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+
+  .IntroHomeSection > p {
+    font-size: 18px;
+  }
+
+  .IntroBtns {
+   
+    text-align: center;
+  }
+
+  .IntroBtns > button {
+    width: 70%;
+  }
+
+  .basicDetailsCircleSection .circleImage {
+    top: -47vh;
+    width: 55%;
+  }
+
+  .basicDetailsCardSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .basicViewInnerSection > .h1basicViewInnerSection {
+    font-size: 60px;
+  }
+
+  .miniOffer {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
+
 /* Screens below 700px */
 @media (max-width: 700px) {
   .IntroHomeSection {
@@ -291,8 +344,8 @@
   }
 
   .IntroBtns {
-    flex-direction: column;
-    gap: 15px;
+   
+    text-align: center;
   }
 
   .IntroBtns > button {
@@ -300,7 +353,7 @@
   }
 
   .basicDetailsCircleSection .circleImage {
-    top: -47vh;
+    top: -35vh;
     width: 55%;
   }
 
@@ -342,7 +395,15 @@
   }
 
   .basicDetailsCircleSection .circleImage {
-    top:-37vh;
+    top:-27vh;
+    width: 65%;
+  }
+}
+
+/* Screens below 360px */
+@media (max-width: 360px) {
+  .basicDetailsCircleSection .circleImage {
+    top:-23vh;
     width: 65%;
   }
 }
@@ -366,7 +427,15 @@
   }
 
   .basicDetailsCircleSection .circleImage {
-    top:-27vh;
+    top:-23vh;
     width: 80%;
+  }
+}
+
+/* Screens below 250px */
+@media (max-width: 250px) {
+.basicDetailsCircleSection .circleImage {
+    top:-17vh;
+    width: 65%;
   }
 }

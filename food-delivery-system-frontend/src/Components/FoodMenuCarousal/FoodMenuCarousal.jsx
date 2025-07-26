@@ -1,8 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useEffect,useRef,useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './FoodMenuCarousal.css';
+import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../Data/CartMenu/CartMenuHandles';
+import MenuItemDetails from '../../Data/MenuDataList/Menu';
 
 const FoodMenuCarousal = ({ FetchedMenu }) => {
   const slider = useRef(null);
@@ -30,6 +34,65 @@ const FoodMenuCarousal = ({ FetchedMenu }) => {
       }
     ]
   };
+
+const [fetchedMenu, setFetchedMenu] = useState([]);
+  const inputRef = useRef(null);
+
+  const [templateCart] = useState({
+    foodMenu: {
+      id: null,
+      dishName: '',
+      ingredients: [],
+      cuisine: '',
+      imgUrl: '',
+      cal: 0,
+      rating: 0,
+      foodType: '',
+      foodItemCost: 0,
+    },
+    quantity: '1',
+    deliveryCharges: '20.0',
+    discount: '20.0',
+  });
+
+  const dispatch = useDispatch();
+  const baseURL = 'http://localhost:8080/API/FoodMenu/';
+  const cartBaseURL = 'http://localhost:8080/API/Cart/';
+
+  useEffect(() => {
+    fetchMenuItems();
+  }, []);
+
+  const fetchMenuItems = async () => {
+    try {
+      const response = await axios.get(`${baseURL}All`);
+      setFetchedMenu(response.data);
+    } catch (error) {
+      console.error('Failed to fetch menu items, using fallback:', error);
+      setFetchedMenu(MenuItemDetails);
+    }
+  };
+
+  const handleCreateCartItem = async (CartItem) => {
+    const updatedCartItem = {
+      ...templateCart,
+      foodMenu: { ...CartItem },
+    };
+
+    try {
+      await axios.post(`${cartBaseURL}createCartItem`, updatedCartItem);
+    } catch (error) {
+      dispatch(
+        addToCart({
+          foodMenu: { ...CartItem },
+          quantity: 1,
+        })
+      );
+      console.error('Failed to create cart item', error);
+    }
+  };
+
+
 
   return (
     <div className='MainCustomersCarousal'>
@@ -68,7 +131,7 @@ const FoodMenuCarousal = ({ FetchedMenu }) => {
                     {row.rating}
                   </h4>
                 </div>
-                <button className='OrderNowBtn'>Order now</button>
+                <button onClick={() => handleCreateCartItem(row)} className='OrderNowBtn'>Order now</button>
               </div>
             </div>
           ))}

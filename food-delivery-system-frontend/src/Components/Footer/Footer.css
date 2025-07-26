@@ -195,8 +195,8 @@
     }
 
     .socialMedialLinks ul {
-        grid-template-columns: repeat(2, 1fr);
-        width: 70px;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100px;
     }
 
     .socialMedialLinks ul li {
@@ -239,8 +239,8 @@
     }
 
     .socialMedialLinks ul {
-        grid-template-columns: repeat(2, 1fr);
-        width: 60px;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100px;
     }
 
     .socialMedialLinks ul li {

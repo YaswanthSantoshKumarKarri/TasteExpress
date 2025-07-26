@@ -101,7 +101,7 @@
   }
 
   .innersliderDiv {
-    width: 90vw;
+    width: 75vw;
     margin: 5px;
     padding: 15px;
   }
@@ -128,9 +128,9 @@
   }
 
   .OrderNowBtn {
-    max-width: 100%; /* full width */
+    max-width: 70%; /* full width */
     font-size: 14px;
-    padding: 8px 16px;
+    padding: 8px 6px;
   }
 }
 

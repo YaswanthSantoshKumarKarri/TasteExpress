@@ -77,6 +77,10 @@ textarea:focus, input:focus{
   text-decoration: none;
 }
 
+.navLink:hover{
+  color: #fff;
+}
+
 select{
   border-bottom: #CC0000 2px solid;
   color: white;
